@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    background-color: #adb3fe;
+    background-color: #a5a7c0;
 }
 
 table {
@@ -27,13 +27,15 @@ tr:hover {
 h1 {
     color: #333;
     margin-bottom: 20px;
+    text-align: center;
 
 }
 
 h2 {
     color: #666;
     margin-bottom: 15px;
+    text-align: center;
 }
 table {
-    border: 2px solid #4CAF50;
+    border: 2px solid #2d3a2e;
 }
