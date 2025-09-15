@@ -52,7 +52,7 @@ div + p {
 #absolute {
   background-color: red;
   position: absolute;
-  
+  right: 100px
 }
 
 #fixed {
@@ -71,7 +71,7 @@ div + p {
 #sticky {
   background-color: chartreuse;
   position: sticky;
-  top: 0;   
+  
 }
 
 #fixed-bottom {

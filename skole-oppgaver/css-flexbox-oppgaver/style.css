@@ -7,16 +7,43 @@
     border-radius: 15px;
 }
 
-/* Unik styling for hver boks */
-#box1 {
-    background-color: rgb(255, 0, 0);
+#olympic-rings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
 }
-#box2 {
-    background-color: rgb(225, 255, 0);
+.ring {
+    width: 100px;
+    height: 100px;
+    border: 10px solid;
+    border-radius: 50%;
+    box-sizing: border-box;
 }
-#box3 {
-    background-color: rgb(8, 0, 255);
+.yellow {
+    border-color: yellow;
+    margin-left: -30px;
+    margin-right: -30px;
+    margin-bottom: -100px;
 }
-#box4 {
-    background-color: rgb(0, 255, 136);
+.red {
+    border-color: red;
+    margin-left: -30px;
+}
+.blue {
+    border-color: blue;
+    margin-left: -30px;
+    margin-right: -30px;
+}
+.black {
+    border-color: black;
+    margin-left: -30px;
+    margin-right: -30px;
+}
+.green {
+    border-color: green;
+    margin-left: -30px;
+    margin-right: -30px;
+    margin-bottom: -100px;
 }
