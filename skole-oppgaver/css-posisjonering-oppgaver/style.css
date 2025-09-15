@@ -11,6 +11,8 @@ body {
   padding: 40px;
   background-color: white;
   border: 1px solid #cccccc;
+  position: relative;
+
 }
 
 /* Stil og posisjonering for <div>-elementene med klasse .posisjonert */
@@ -31,26 +33,54 @@ body {
 /* Stil for første avsnitt etter et <div>-element */
 div + p {
   background-color: yellow;
+
 }
 
 /* Stil og posisjonering for <div>-elementene med #id */
 #static {
   background-color: blue;
+  position: static;
 }
 
 #relative {
   background-color: yellow;
+  position: relative;
+  
+  
 }
 
 #absolute {
   background-color: red;
+  position: absolute;
+  
 }
 
 #fixed {
   background-color: aquamarine;
+  position: fixed;
+  top: 10px;
+  left: 10px; 
+  right: 10px;
+  width: auto; 
+  z-index: 9999; /* Add this to bring it to the top */
+  
+
 }
+
 
 #sticky {
   background-color: chartreuse;
+  position: sticky;
+  top: 0;   
+}
+
+#fixed-bottom {
+  background-color: aquamarine; /* Same as #fixed */
+  position: fixed;
+  bottom: 10px; /* Position at bottom instead of top */
+  left: 10px;
+  right: 10px;
+  width: auto;
+  z-index: 9999; /* Same z-index to match */
 }
 
