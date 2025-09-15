@@ -1,0 +1,56 @@
+/* Generell stil for alt innhold på nettsiden */
+body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+/* Stil og posisjonering for <div>-elementet med ID #hoved */
+#hoved {
+  width: 60%;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: white;
+  border: 1px solid #cccccc;
+}
+
+/* Stil og posisjonering for <div>-elementene med klasse .posisjonert */
+.posisjonert {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid black;
+
+  /* Plasserer teksten i midten av boksen ved bruk av flexbox. Det skal vi lære mer om senere. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+/* Stil for første avsnitt etter et <div>-element */
+div + p {
+  background-color: yellow;
+}
+
+/* Stil og posisjonering for <div>-elementene med #id */
+#static {
+  background-color: blue;
+}
+
+#relative {
+  background-color: yellow;
+}
+
+#absolute {
+  background-color: red;
+}
+
+#fixed {
+  background-color: aquamarine;
+}
+
+#sticky {
+  background-color: chartreuse;
+}
+
