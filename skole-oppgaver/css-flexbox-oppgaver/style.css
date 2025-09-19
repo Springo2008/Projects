@@ -1,49 +1,58 @@
 /* Generell styling for alle boksene */
+.container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    height: 100vh;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 10px solid black;
+    align-items: center;
+    background-color: rgb(200, 200, 200);
+    border-radius: 100px;
+    align-content: center;
+    column-gap: 1em;
+    row-gap: 1em;
+    
+
+}
+
+/* Generell styling for alle boksene */
 .box {
     width: 150px;
     height: 150px;
     font-size: 8em;
     text-align: center;
-    border-radius: 15px;
-}
+    border-radius: 50px;
 
-#olympic-rings {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 50px;
 }
-.ring {
-    width: 100px;
-    height: 100px;
-    border: 10px solid;
-    border-radius: 50%;
-    box-sizing: border-box;
+#box1 {
+    background-color: rgb(255, 0, 0);
 }
-.yellow {
-    border-color: yellow;
-    margin-left: -30px;
-    margin-right: -30px;
-    margin-bottom: -100px;
+#box2 {
+    background-color: rgb(225, 255, 0);
 }
-.red {
-    border-color: red;
-    margin-left: -30px;
+#box3 {
+    background-color: rgb(8, 0, 255);
 }
-.blue {
-    border-color: blue;
-    margin-left: -30px;
-    margin-right: -30px;
+#box4 {
+    background-color: rgb(0, 255, 136);
+    
 }
-.black {
-    border-color: black;
-    margin-left: -30px;
-    margin-right: -30px;
+#box5 {
+    background-color: rgb(255, 128, 0);
 }
-.green {
-    border-color: green;
-    margin-left: -30px;
-    margin-right: -30px;
-    margin-bottom: -100px;
+#box6 {
+    background-color: rgb(128, 0, 255);
+}
+#box7 {
+    background-color: rgb(0, 255, 255);
+}
+#box8 {
+    background-color: rgb(255, 0, 255);
+    order: ;
+}
+#box9 {
+    background-color: rgb(0, 0, 0);
+    color: white;
 }
