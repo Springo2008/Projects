@@ -1,0 +1,15 @@
+#layout {
+    display: grid;
+    height: 100vh;
+      grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  
+}
+
+#layout > div {
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+}
