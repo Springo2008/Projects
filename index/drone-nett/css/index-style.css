@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Eurostile';
+    src: url('../font/Eurostile\ Extended\ #2\ Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:#10367D ;
+    font-family: 'Eurostile', Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    min-height: 100vh;
+    display: flex;          
+    flex-direction: column; 
+}
+
+.header {
+    display: flex;
+    padding: 1em;
+    border-bottom: 2px solid #333;
+    background-color: #EBEBEB;
+    
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 1.5em; 
+    padding: 1.5em; 
+}
+
+.content-left, .content-right{
+    border: 1px solid #ccc;
+    padding: 20px;
+    min-height: 13em;
+    background-color:#EBEBEB;
+    border-radius: 1em;
+}
+
+.footer {
+    border-top: 2px solid #333;
+    padding: 20px;
+    text-align: center;
+    background-color: #EBEBEB;
+    color: #333;
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.75em;
+}
+
+
+@media (max-width: 768px) {
+    .main {
+        grid-template-columns: 1fr; 
+        gap: 1.5em;
+        padding: 1.5em;
+    }
+    
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5em;
+    }
+    
+    .content-left, .content-right{
+        min-height: 10em;
+        padding: 1em;
+    }
+}
