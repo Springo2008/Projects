@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Nettside</title>
+    <link rel="stylesheet" href="css/index-style.css">
+</head>
+
+
+<body>
+   <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="photo/picsvg_download.svg" alt="Logo">
+            </div>
+            <h1> Husby</h1>
+        </header>
+    <main class ="main">
+        <div class = "content-left">
+            <h2> Innhold</h2>
+            <p> Paragraf</p>
+        </div>
+        <div class="content-right">
+            <h2>Innhold 2</h2>
+            <p>Paragraf 2</p>
+        </div>
+    </main>
+
+    <section class="product">
+        <div class="drone-icon">
+
+        </div>
+
+        <div class="product-innhold">
+
+
+        </div>
+
+
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 Husby Drone. Alle rettigheter forbeholdt.</p>
+    </footer>
+
+        
+        
+
+
+
+
+    </div>
+    
+</body>
+</html>
+
+<style>
+.header {
+    display: flex;
+    align-items: center; 
+    padding: 1em;
+    border-bottom: 2px solid #333;
+    background-color: #EBEBEB;
+}
+
+.logo img {
+    height: 40px; 
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .main {
+        grid-template-columns: 1fr; 
+        gap: 1.5em;
+        padding: 1.5em;
+    }
+    
+    .header {
+        flex-direction: row;      
+        justify-content: flex-start; 
+        align-items: center;        
+        text-align: left;          
+        padding: 1.5em;
+    }
+    
+    .content-left, .content-right{
+        min-height: 10em;
+        padding: 1em;
+    }
+}
+</style>
