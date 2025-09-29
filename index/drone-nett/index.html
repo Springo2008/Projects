@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/index-style.css">
 </head>
 
-
 <body>
    <div class="container">
         <header class="header">
@@ -15,14 +14,30 @@
                 <img src="photo/picsvg_download.svg" alt="Logo">
             </div>
             <h1> Husby</h1>
+            <div class="burger" onclick="toggleMenu()">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </div>
         </header>
+        
+    
+        <nav class="dropdown-menu" id="dropdownMenu">
+            <ul>
+                <li><a href="produkter.html">Produkter</a></li>
+                <li><a href="om-oss.html">Om Oss</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </nav>
+
     <main class ="main">
         <div class = "content-left">
             <h2> Innhold</h2>
             <p> Paragraf</p>
         </div>
         <div class="content-right">
-            <h2>Innhold 2</h2>
+            <h2>Innhol 2</h2>
             <p>Paragraf 2</p>
         </div>
     </main>
@@ -34,59 +49,29 @@
 
         <div class="product-innhold">
 
-
         </div>
-
-
     </section>
 
     <footer class="footer">
-        <p>© 2024 Husby Drone. Alle rettigheter forbeholdt.</p>
+        <p>© 2025 Husby Drone. Alle rettigheter forbeholdt.</p>
     </footer>
-
-        
-        
-
-
-
-
     </div>
     
+    <script>
+    function toggleMenu() {
+        const dropdown = document.getElementById('dropdownMenu');
+        dropdown.classList.toggle('show');
+    }
+
+    // Lukk menyen hvis man klikker utenfor
+    window.onclick = function(event) {
+        if (!event.target.matches('.burger') && !event.target.matches('.burger-line')) {
+            const dropdown = document.getElementById('dropdownMenu');
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
+            }
+        }
+    }
+    </script>
 </body>
 </html>
-
-<style>
-.header {
-    display: flex;
-    align-items: center; 
-    padding: 1em;
-    border-bottom: 2px solid #333;
-    background-color: #EBEBEB;
-}
-
-.logo img {
-    height: 40px; 
-    width: auto;
-}
-
-@media (max-width: 768px) {
-    .main {
-        grid-template-columns: 1fr; 
-        gap: 1.5em;
-        padding: 1.5em;
-    }
-    
-    .header {
-        flex-direction: row;      
-        justify-content: flex-start; 
-        align-items: center;        
-        text-align: left;          
-        padding: 1.5em;
-    }
-    
-    .content-left, .content-right{
-        min-height: 10em;
-        padding: 1em;
-    }
-}
-</style>
