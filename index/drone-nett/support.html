@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drone Nettside</title>
-    <link rel="stylesheet" href="css/index-style.css">
+    <title>Support - Husby Drone</title>
+    <link rel="stylesheet" href="css/support-style.css">
 </head>
 
 <body>
@@ -15,35 +15,43 @@
                     <img src="photo/picsvg_download.svg" alt="Logo">
                 </a>
             </div>
-            <h1> Husby</h1>
+            <h1>Support</h1>
             <div class="burger" onclick="toggleMenu()">
                 <div class="burger-line"></div>
                 <div class="burger-line"></div>
                 <div class="burger-line"></div>
             </div>
         </header>
-
-    
-                <nav class="dropdown-menu" id="dropdownMenu">
+        
+        <nav class="dropdown-menu" id="dropdownMenu">
             <ul>
                 <li><a href="index.html">Hjem</a></li>
                 <li><a href="produkter.html">Produkter</a></li>
                 <li><a href="specs.html">Spesifikasjoner</a></li>
-                <li><a href="support.html">Support</a></li>
             </ul>
         </nav>
 
-    <main class ="main">
-        <div class = "content-left">
-            <h2> Innhold</h2>
-            <p> Paragraf</p>
+    <main class="main">
+        <div class="content-left">
+            <h2>Kundesupport</h2>
+            <p>Få hjelp med dine drone-produkter. Vi tilbyr teknisk support og feilsøking.</p>
         </div>
         <div class="content-right">
-            <h2>Innhol 2</h2>
-            <p>Paragraf 2</p>
+            <h2>Kontakt Oss</h2>
+            <p>Ta kontakt for spørsmål, reparasjoner eller teknisk assistanse.</p>
         </div>
     </main>
-    
+
+    <section class="product">
+        <div class="drone-icon">
+            <!-- Drone ikon her -->
+        </div>
+        <div class="product-innhold">
+            <h3>Support-tjenester</h3>
+            <p>FAQ, brukermanualer og kontaktinformasjon kommer her.</p>
+        </div>
+    </section>
+
     <footer class="footer">
         <p>© 2025 Husby Drone. Alle rettigheter forbeholdt.</p>
     </footer>
@@ -55,7 +63,6 @@
         dropdown.classList.toggle('show');
     }
 
-    // Prompt: hvordan kan jeg lage en burgermeny på høyresiden i headeren,når man trykker på menyen skal det vise en liten liste av knapper til nye sider 
     window.onclick = function(event) {
         if (!event.target.matches('.burger') && !event.target.matches('.burger-line')) {
             const dropdown = document.getElementById('dropdownMenu');
