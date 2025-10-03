@@ -16,7 +16,7 @@
                 </a>
             </div>
             <h1>Support</h1>
-            <div class="burger" onclick="toggleMenu()">
+            <div class="burger">
                 <div class="burger-line"></div>
                 <div class="burger-line"></div>
                 <div class="burger-line"></div>
@@ -57,20 +57,6 @@
     </footer>
     </div>
     
-    <script>
-    function toggleMenu() {
-        const dropdown = document.getElementById('dropdownMenu');
-        dropdown.classList.toggle('show');
-    }
-
-    window.onclick = function(event) {
-        if (!event.target.matches('.burger') && !event.target.matches('.burger-line')) {
-            const dropdown = document.getElementById('dropdownMenu');
-            if (dropdown.classList.contains('show')) {
-                dropdown.classList.remove('show');
-            }
-        }
-    }
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
