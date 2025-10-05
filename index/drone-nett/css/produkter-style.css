@@ -129,6 +129,56 @@ body{
     border-top: 1px solid #ccc;
 }
 
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background-color: #EBEBEB;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.product-card h3 {
+    font-family: 'Eurostile', Arial, sans-serif;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.product-card .category {
+    color: #228B22;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.product-card p {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.product-card .price {
+    color: #228B22;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Eurostile', Arial, sans-serif;
+}
+
 .drone-icon {
     width: 100px;
     height: 100px;
@@ -177,5 +227,15 @@ body{
     .product {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .product-card {
+        padding: 15px;
     }
 }
