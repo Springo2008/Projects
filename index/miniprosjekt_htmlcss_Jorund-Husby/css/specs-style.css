@@ -1,75 +1,125 @@
-.drone-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(1.5rem, 3vw, 2.5rem);
-    color: var(--accent-contrast);
+@font-face {
+    font-family: 'Eurostile';
+    src: url('../font/Eurostile%20Extended%20%232%20Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(1.25rem, 3vw, 2.25rem);
 }
 
-.drone-gallery h2 {
-    margin: 0;
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-    color: var(--accent-contrast);
+.facts-grid li {
+    list-style: none;
+    border: 1px solid var(--surface-border);
+    border-radius: 0.9rem;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    background: var(--surface);
+    box-shadow: var(--shadow-soft);
 }
 
-.media-grid {
+.facts-grid strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.facts-grid span {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.hero-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: clamp(1.25rem, 3vw, 2.5rem);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
-.media-item {
-    background-color: var(--surface);
-    border: 1px solid var(--surface-border-soft);
+.hero-gallery figure {
+    position: relative;
+    overflow: hidden;
     border-radius: 1.25rem;
-    padding: clamp(1rem, 2.5vw, 1.75rem);
+    border: 1px solid var(--surface-border);
     box-shadow: var(--shadow-soft);
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    min-height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.media-item:hover,
-.media-item:focus-within {
-    transform: translateY(-6px);
+.hero-gallery figure:hover,
+.hero-gallery figure:focus-within {
+    transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
 }
 
-.media-item img,
-.media-item video {
+.hero-gallery img {
+    display: block;
     width: 100%;
-    border-radius: 1rem;
-    box-shadow: inset 0 0 0 1px var(--surface-border-soft);
-}
-
-.drone-image {
-    aspect-ratio: 4 / 3;
+    height: 100%;
     object-fit: cover;
 }
 
-.drone-video {
-    aspect-ratio: 16 / 9;
-    background-color: #000;
+.hero-gallery figcaption {
+    position: absolute;
+    inset: auto 1rem 1rem 1rem;
+    background: linear-gradient(135deg, rgba(16, 54, 125, 0.92), rgba(13, 42, 93, 0.85));
+    color: var(--accent-contrast);
+    padding: 0.75rem 1rem;
+    border-radius: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
-.media-item p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    text-align: center;
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background: var(--surface);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
 }
 
-.video-item {
-    padding-bottom: clamp(0.5rem, 2vw, 1rem);
+.spec-table th,
+.spec-table td {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid var(--surface-border-soft);
 }
 
-@media (max-width: 600px) {
-    .media-item {
-        padding: clamp(0.85rem, 4vw, 1.25rem);
-    }
+.spec-table th {
+    background: linear-gradient(135deg, rgba(16, 54, 125, 0.95), rgba(13, 42, 93, 0.9));
+    color: var(--accent-contrast);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
 
-    .drone-image {
-        aspect-ratio: 3 / 2;
+.spec-table tr:last-child td {
+    border-bottom: none;
+}
+
+.spec-table tbody tr:nth-child(even) {
+    background-color: rgba(16, 54, 125, 0.04);
+}
+
+.spec-table tbody tr:hover {
+    background-color: rgba(16, 54, 125, 0.08);
+}
+
+.callout {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.95), rgba(255, 215, 0, 0.8));
+    color: #2f2600;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    border-radius: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 720px) {
+    .spec-table {
+        display: block;
+        overflow-x: auto;
     }
 }
