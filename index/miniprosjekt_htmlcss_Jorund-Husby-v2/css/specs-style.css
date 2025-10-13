@@ -1,15 +1,15 @@
 .drone-gallery {
     padding: clamp(1.5rem, 4vw, 2.5rem);
-    border: 2px solid var(--surface-border);
+    border: 2px solid #333333;
     border-radius: 1.25rem;
-    box-shadow: var(--shadow-soft);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.88));
 }
 
 .drone-gallery h2 {
     text-align: center;
     margin: 0 0 clamp(1.5rem, 3vw, 2.5rem);
-    color: var(--text-primary);
+    color: #333333;
     font-size: clamp(1.6rem, 3vw, 2.2rem);
 }
 
@@ -23,7 +23,7 @@
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 1rem;
     padding: clamp(1rem, 2.5vw, 1.5rem);
-    box-shadow: var(--shadow-soft);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -31,7 +31,7 @@
 .media-item:hover,
 .media-item:focus-within {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
 }
 
 .drone-image,
@@ -49,7 +49,7 @@
 
 .media-item p {
     margin: 0;
-    color: var(--text-primary);
+    color: #333333;
     font-weight: 600;
     letter-spacing: 0.02em;
 }

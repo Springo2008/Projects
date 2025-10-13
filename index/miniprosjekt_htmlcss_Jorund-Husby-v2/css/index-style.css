@@ -14,12 +14,12 @@
 .showcase-text h2 {
     margin-top: 0;
     margin-bottom: 1rem;
-    color: var(--text-primary);
+    color: #333333;
     font-size: clamp(1.65rem, 3vw, 2.2rem);
 }
 
 .showcase-text p {
-    color: var(--text-secondary);
+    color: #666666;
     margin-bottom: clamp(1.25rem, 3vw, 2rem);
 }
 
@@ -27,21 +27,21 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--accent);
-    color: var(--accent-contrast);
+    background-color: #10367d;
+    color: #ffffff;
     padding: 0.9rem 1.75rem;
     border-radius: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
-    box-shadow: var(--shadow-soft);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .showcase-link:hover,
 .showcase-link:focus {
-    background-color: var(--accent-alt);
+    background-color: #0d2a5d;
     transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
 }
 
 .featured-drone,
@@ -50,7 +50,7 @@
     height: clamp(240px, 35vw, 320px);
     object-fit: cover;
     border-radius: 0.85rem;
-    box-shadow: var(--shadow-soft);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .components-showcase .showcase-link {
