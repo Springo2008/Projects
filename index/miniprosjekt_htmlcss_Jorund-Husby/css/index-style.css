@@ -1,378 +1,74 @@
-/* Importerer custom font Eurostile Extended Bold for teknologisk estetikk */
-@font-face {
-    font-family: 'Eurostile';
-    src: url("../font/Eurostile Extended #2 Bold.otf") format('opentype'),
-         url('../font/Eurostile%20Extended%20%232%20Bold.otf') format('opentype'),
-         url("../font/Eurostile Extended #2 Bold.otf") format('truetype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Grunnleggende styling for hele nettsiden med blå bakgrunn */
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color:#10367D ; /* Mørk blå bakgrunn */
-    font-family: 'Eurostile', Arial, sans-serif;
-    overflow-x: hidden;
-}
-
-/* Hovedcontainer med flex layout og rammer */
-.container {
-    margin: 0 auto;
-    border: 2px solid #333;
-    min-height: 100vh;
-    display: flex;          
-    flex-direction: column;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* Header med logo og navigasjonselementer */
-.header {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 1em;
-    border-bottom: 2px solid #333;
-    background-color: #EBEBEB;
-}
-
-/* Logo styling og størrelse */
-.logo img {
-    height: 2.5em; 
-    width: auto;
-}
-
-.logo a {
-    text-decoration: none;
-    display: block;
-}
-
-/* Burger meny styling for mobil navigasjon */
-.burger{
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 0.25em;
-}
-
-/* Burger meny linjer styling */
-.burger-line {
-    width: 1.5em;
-    height: 0.2em;
-    background-color: #000000;
-    margin: 0.2em 0;
-    transition: 0.3s;
-}
-
-/* Burger meny hover-effekt med blå farge */
-.burger:hover .burger-line {
-    background-color: #10367D;
-}
-
-/* Dropdown navigasjonsmeny styling */
-.dropdown-menu {
-    display: none; 
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    background-color: #EBEBEB;
-    border: 2px solid #333;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1000;
-    min-width: 150px;
-}
-
-/* Dropdown meny liste styling */
-.dropdown-menu ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* Dropdown meny element styling */
-.dropdown-menu li{ 
-    border-bottom: 1px solid #ccc;
-}
-
-.dropdown-menu li:last-child { 
-    border-bottom: none;
-}
-
-/* Dropdown meny lenke styling */
-.dropdown-menu a{
-    display: block;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: #333;
-    font-family: 'Eurostile', Arial, sans-serif;
-    transition: background-color 0.3s;
-}
-
-/* Dropdown meny lenke hover-effekt */
-.dropdown-menu a:hover {
-    background-color: #10367D;
-    color: white;
-}
-
-/* Vis klasse for å vise dropdown meny */
-.dropdown-menu.show {
-    display: block;
-}
-
-/* Hovedinnholdsområde med to-kolonne grid layout */
-.main{
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 1.5em; 
-    padding: 1.5em; 
-}
-
-/* Venstre og høyre innholdsseksjoner styling */
-.content-left, .content-right{
-    border: 1px solid #ccc;
-    padding: 20px;
-    min-height: 13em;
-    background-color:#EBEBEB;
-    border-radius: 1em;
-}
-
-/* Drone showcase seksjon styling */
-.drone-showcase {
-    margin: 2rem;
-    background-color: #EBEBEB;
-    border: 2px solid #333;
-    border-radius: 1em;
+.drone-showcase,
+.components-showcase {
     overflow: hidden;
 }
 
 .showcase-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     align-items: center;
-    gap: 2rem;
-    padding: 2rem;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding: clamp(1.5rem, 4vw, 3rem);
 }
 
 .showcase-text h2 {
-    color: #333;
+    margin-top: 0;
     margin-bottom: 1rem;
-    font-family: 'Eurostile', Arial, sans-serif;
+    color: var(--text-primary);
+    font-size: clamp(1.65rem, 3vw, 2.2rem);
 }
 
 .showcase-text p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: clamp(1.25rem, 3vw, 2rem);
 }
 
 .showcase-link {
-    display: inline-block;
-    background-color: #10367D;
-    color: white;
-    text-decoration: none;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.showcase-link:hover {
-    background-color: #0D2A5D;
-    transform: translateY(-2px);
-}
-
-.featured-drone {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.components-showcase {
-    margin: 2rem;
-    background-color: #EBEBEB;
-    border: 2px solid #333;
-    border-radius: 1em;
-    overflow: hidden;
-}
-
-.components-showcase .showcase-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: inline-flex;
     align-items: center;
-    gap: 2rem;
-    padding: 2rem;
+    justify-content: center;
+    background-color: var(--accent);
+    color: var(--accent-contrast);
+    padding: 0.9rem 1.75rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    box-shadow: var(--shadow-soft);
 }
 
-.components-showcase .showcase-text h2 {
-    color: #333;
-    margin-bottom: 1rem;
-    font-family: 'Eurostile', Arial, sans-serif;
+.showcase-link:hover,
+.showcase-link:focus {
+    background-color: var(--accent-alt);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
 }
 
-.components-showcase .showcase-text p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+.featured-drone,
+.featured-components {
+    width: 100%;
+    height: clamp(240px, 35vw, 320px);
+    object-fit: cover;
+    border-radius: 0.85rem;
+    box-shadow: var(--shadow-soft);
 }
 
 .components-showcase .showcase-link {
-    display: inline-block;
-    background-color: #228B22;
-    color: white;
-    text-decoration: none;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #228b22, #1a6f1a);
 }
 
-.components-showcase .showcase-link:hover {
-    background-color: #1F7A1F;
-    transform: translateY(-2px);
+.components-showcase .showcase-link:hover,
+.components-showcase .showcase-link:focus {
+    background: linear-gradient(135deg, #1f7a1f, #145514);
 }
 
-.featured-components {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* Footer styling for bunnen av siden */
-.footer {
-    border-top: 2px solid #333;
-    padding: 20px;
-    text-align: center;
-    background-color: #EBEBEB;
-    color: #333;
-    margin-top: auto;
-}
-
-/* Footer tekst styling */
-.footer p {
-    margin: 0;
-    font-size: 0.75em;
-}
-
-/* Store skjerm responsive stiler */
-@media (max-width: 1200px) {
-    .main {
-        padding: 1.5em;
-    }
-}
-
-/* Tablet og medium skjerm responsive stiler */
-@media (max-width: 768px) {
-    .container {
-        border: none;
-    }
-    
-    /* Bytt til en-kolonne layout på tablets */
-    .main {
-        grid-template-columns: 1fr; 
-        gap: 1em;
-        padding: 1em;
-    }
-    
-    /* Juster header for mobil avstand */
-    .header { 
-        justify-content: space-between;
-        align-items: center;
-        padding: 1em;
-    }
-    
-    /* Reduser innholdsseksjon høyde og padding for mobil */
-    .content-left, .content-right{
-        min-height: 8em;
-        padding: 1em;
-        margin: 0;
-    }
-    
-    /* Juster showcase seksjon marginer for mobil */
-    .drone-showcase {
-        margin: 1rem;
-    }
-    
-    .components-showcase {
-        margin: 1rem;
-    }
-    
-    /* En-kolonne layout for showcase innhold på mobil */
+@media (max-width: 640px) {
     .showcase-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1.5rem;
+        padding: clamp(1rem, 6vw, 1.5rem);
+        gap: clamp(1rem, 4vw, 1.5rem);
     }
-    
-    .components-showcase .showcase-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1.5rem;
-    }
-    
-    /* Reduser fremhevet bilde høyder for mobil */
-    .featured-drone {
-        height: 250px;
-    }
-    
-    .featured-components {
-        height: 250px;
-    }
-}
 
-/* Små mobilskjerm responsive stiler */
-@media (max-width: 480px) {
-    /* Ytterligere reduser header padding for små skjermer */
-    .header {
-        padding: 0.8em;
-    }
-    
-    /* Minimal padding for små skjermer */
-    .main {
-        padding: 0.5em;
-        gap: 0.8em;
-    }
-    
-    /* Minimal content padding for small screens */
-    .content-left, .content-right{
-        padding: 0.8em;
-    }
-    
-    /* Minimal showcase margins for small screens */
-    .drone-showcase {
-        margin: 0.5rem;
-    }
-    
-    .components-showcase {
-        margin: 0.5rem;
-    }
-    
-    /* Reduced padding and gaps for small screens */
-    .showcase-content {
-        padding: 1rem;
-        gap: 1rem;
-    }
-    
-    .components-showcase .showcase-content {
-        padding: 1rem;
-        gap: 1rem;
-    }
-    
-    /* Smaller featured image heights for small screens */
-    .featured-drone {
-        height: 200px;
-    }
-    
-    .featured-components {
-        height: 200px;
+    .showcase-link {
+        width: 100%;
     }
 }

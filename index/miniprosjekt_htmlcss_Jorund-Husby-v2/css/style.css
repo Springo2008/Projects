@@ -1,0 +1,298 @@
+/* Felles styling for Husby Drone-prosjektet */
+@font-face {
+    font-family: "Eurostile";
+    src: url("../font/Eurostile Extended #2 Bold.otf") format("opentype"),
+         url("../font/Eurostile%20Extended%20%232%20Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --background: #10367d;
+    --accent: #10367d;
+    --accent-alt: #0d2a5d;
+    --accent-contrast: #ffffff;
+    --surface: #ebebeb;
+    --surface-border: #333333;
+    --surface-border-soft: rgba(51, 51, 51, 0.12);
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.12);
+    --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+body {
+    margin: 0;
+    font-family: "Eurostile", Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body.page-products {
+    --background: #228b22;
+    --accent: #228b22;
+    --accent-alt: #1f7a1f;
+}
+
+body.page-specs {
+    --background: #ff6347;
+    --accent: #ff6347;
+    --accent-alt: #e5533c;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+video {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: var(--accent-alt);
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 2px solid var(--surface-border);
+    border-bottom: 2px solid var(--surface-border);
+    background: transparent;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: clamp(1rem, 2vw, 1.75rem) clamp(1.25rem, 3vw, 2.5rem);
+    background-color: var(--surface);
+    border-bottom: 2px solid var(--surface-border);
+    position: relative;
+    z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    letter-spacing: 0.04em;
+}
+
+.logo a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo img {
+    height: clamp(2.25rem, 4vw, 3rem);
+    width: auto;
+}
+
+.burger {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.4rem;
+    cursor: pointer;
+}
+
+.burger:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.burger-line {
+    width: 1.75rem;
+    height: 0.18rem;
+    background-color: var(--text-primary);
+    border-radius: 999px;
+    transition: background-color 0.3s ease;
+}
+
+.burger:hover .burger-line,
+.burger:focus .burger-line {
+    background-color: var(--accent);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: clamp(1.25rem, 3vw, 2.5rem);
+    background-color: var(--surface);
+    border: 2px solid var(--surface-border);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-soft);
+    min-width: 220px;
+    padding: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li + li {
+    border-top: 1px solid var(--surface-border-soft);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background-color: var(--accent);
+    color: var(--accent-contrast);
+    border-radius: 0.5rem;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.75rem, 3vw, 3rem);
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.intro-card {
+    background-color: var(--surface);
+    border: 1px solid var(--surface-border-soft);
+    border-radius: 1rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(2px);
+}
+
+.intro-card h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+}
+
+.intro-card p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.surface-section {
+    background-color: var(--surface);
+    border: 2px solid var(--surface-border);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.section-heading {
+    margin-top: 0;
+    color: var(--text-primary);
+    font-size: clamp(1.5rem, 2.75vw, 2rem);
+}
+
+.footer-note {
+    color: var(--text-secondary);
+}
+
+footer {
+    margin-top: auto;
+    background-color: var(--surface);
+    border-top: 2px solid var(--surface-border);
+    text-align: center;
+    padding: 1.25rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 960px) {
+    header {
+        padding: 1rem clamp(1.25rem, 5vw, 2rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        border-top-width: 0;
+        border-bottom-width: 0;
+    }
+
+    header {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    header h1 {
+        flex: 1 0 100%;
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        right: clamp(1rem, 4vw, 1.75rem);
+        min-width: min(280px, calc(100vw - 2.5rem));
+    }
+
+    main {
+        padding: clamp(1rem, 4vw, 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.85rem clamp(1rem, 6vw, 1.5rem);
+    }
+
+    .burger-line {
+        width: 1.5rem;
+    }
+
+    main {
+        gap: 1.5rem;
+    }
+}

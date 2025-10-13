@@ -1,303 +1,75 @@
-@font-face {
-    font-family: 'Eurostile';
-    src: url('../font/Eurostile%20Extended%20%232%20Bold.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #FF6347; 
-    font-family: 'Eurostile', Arial, sans-serif;
-    overflow-x: hidden;
-}
-
-.container {
-    margin: 0 auto;
-    border: 2px solid #333;
-    min-height: 100vh;
-    display: flex;          
-    flex-direction: column;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 1em;
-    border-bottom: 2px solid #333;
-    background-color: #EBEBEB;
-}
-
-.logo img {
-    height: 2.5em; 
-    width: auto;
-}
-
-.logo a {
-    text-decoration: none;
-    display: block;
-}
-
-.burger{
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 0.25em;
-}
-
-.burger-line {
-    width: 1.5em;
-    height: 0.2em;
-    background-color: #000000;
-    margin: 0.2em 0;
-    transition: 0.3s;
-}
-
-.burger:hover .burger-line {
-    background-color: #FF6347;
-}
-
-.dropdown-menu {
-    display: none; 
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    background-color: #EBEBEB;
-    border: 2px solid #333;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1000;
-    min-width: 150px;
-}
-
-.dropdown-menu ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.dropdown-menu li{ 
-    border-bottom: 1px solid #ccc;
-}
-
-.dropdown-menu li:last-child { 
-    border-bottom: none;
-}
-
-.dropdown-menu a{
-    display: block;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: #333;
-    font-family: 'Eurostile', Arial, sans-serif;
-    transition: background-color 0.3s;
-}
-
-.dropdown-menu a:hover {
-    background-color: #FF6347;
-    color: white;
-}
-
-.dropdown-menu.show {
-    display: block;
-}
-
-.main{
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 1.5em; 
-    padding: 1.5em; 
-}
-
-.content-left, .content-right{
-    border: 1px solid #ccc;
-    padding: 20px;
-    min-height: 13em;
-    background-color: #EBEBEB;
-    border-radius: 1em;
-}
-
 .drone-gallery {
-    padding: 2rem;
-    background-color: #EBEBEB;
-    margin: 2rem;
-    border-radius: 1em;
-    border: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    color: var(--accent-contrast);
 }
 
 .drone-gallery h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 2rem;
-    font-family: 'Eurostile', Arial, sans-serif;
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: var(--accent-contrast);
 }
 
 .media-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(1.25rem, 3vw, 2.5rem);
 }
 
 .media-item {
-    background-color: white;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    text-align: center;
+    background-color: var(--surface);
+    border: 1px solid var(--surface-border-soft);
+    border-radius: 1.25rem;
+    padding: clamp(1rem, 2.5vw, 1.75rem);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    min-height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.media-item:hover {
-    transform: translateY(-5px);
+.media-item:hover,
+.media-item:focus-within {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.media-item img,
+.media-item video {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: inset 0 0 0 1px var(--surface-border-soft);
 }
 
 .drone-image {
-    width: 100%;
-    height: 250px;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 1rem;
 }
 
 .drone-video {
-    width: 100%;
-    height: 250px;
-    border-radius: 5px;
-    margin-bottom: 1rem;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
 }
 
 .media-item p {
-    color: #333;
-    font-weight: 500;
     margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    text-align: center;
 }
 
 .video-item {
-    background: linear-gradient(135deg, #FF6347, #10367D);
-    color: white;
+    padding-bottom: clamp(0.5rem, 2vw, 1rem);
 }
 
-.video-item p {
-    color: white;
-}
+@media (max-width: 600px) {
+    .media-item {
+        padding: clamp(0.85rem, 4vw, 1.25rem);
+    }
 
-.product {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 20px;
-    padding: 20px;
-    border-top: 1px solid #ccc;
-}
-
-.drone-icon {
-    width: 100px;
-    height: 100px;
-    border: 2px solid #333;
-    background-color: #f0f0f0;
-}
-
-.product-innhold {
-    padding: 20px;
-    background-color: #EBEBEB;
-    border-radius: 1em;
-}
-
-.footer {
-    border-top: 2px solid #333;
-    padding: 20px;
-    text-align: center;
-    background-color: #EBEBEB;
-    color: #333;
-    margin-top: auto;
-}
-
-.footer p {
-    margin: 0;
-    font-size: 0.75em;
-}
-
-@media (max-width: 1200px) {
-    .main {
-        padding: 1.5em;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-    }
-    
-    .container {
-        border: none;
-    }
-    
-    .main {
-        grid-template-columns: 1fr; 
-        gap: 1em;
-        padding: 1em;
-    }
-    
-    .header { 
-        justify-content: space-between;
-        align-items: center;
-        padding: 1em;
-    }
-    
-    .content-left, .content-right{
-        min-height: 8em;
-        padding: 1em;
-        margin: 0;
-    }
-    
-    .product {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .drone-gallery {
-        margin: 1rem;
-        padding: 1rem;
-    }
-    
-    .media-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .drone-image, .drone-video {
-        height: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        padding: 0.8em;
-    }
-    
-    .main {
-        padding: 0.5em;
-        gap: 0.8em;
-    }
-    
-    .content-left, .content-right{
-        padding: 0.8em;
-    }
-    
-    .drone-gallery {
-        margin: 0.5rem;
-        padding: 0.8rem;
-    }
-    
-    .media-grid {
-        gap: 0.8rem;
+    .drone-image {
+        aspect-ratio: 3 / 2;
     }
 }

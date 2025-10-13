@@ -11,13 +11,22 @@ class DroneWebsite {
         const dropdown = document.getElementById('dropdownMenu');
         
         if (burger && dropdown) {
-            // Fjern eventuell eksisterende onclick
             burger.removeAttribute('onclick');
             
             burger.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                dropdown.classList.toggle('show');
+                const isOpen = dropdown.classList.toggle('show');
+                burger.setAttribute('aria-expanded', String(isOpen));
+                if (isOpen) {
+                    dropdown.querySelector('a')?.focus();
+                }
+            });
+
+            dropdown.addEventListener('click', (event) => {
+                if (event.target instanceof HTMLElement && event.target.tagName === 'A') {
+                    this.closeMenu(dropdown, burger);
+                }
             });
         }
     }
@@ -31,9 +40,7 @@ class DroneWebsite {
             
             // Sjekk om klikket var på burgermeny eller dropdown
             if (!burger?.contains(event.target) && !dropdown?.contains(event.target)) {
-                if (dropdown && dropdown.classList.contains('show')) {
-                    dropdown.classList.remove('show');
-                }
+                dropdown && burger && this.closeMenu(dropdown, burger);
             }
         });
         
@@ -49,6 +56,21 @@ class DroneWebsite {
                 }
             });
         });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                const dropdown = document.getElementById('dropdownMenu');
+                const burger = document.querySelector('.burger');
+                if (dropdown && burger && dropdown.classList.contains('show')) {
+                    this.closeMenu(dropdown, burger);
+                    burger.focus();
+                }
+            }
+        });
+    }
+
+    closeMenu(dropdown, burger) {
+        dropdown.classList.remove('show');
+        burger.setAttribute('aria-expanded', 'false');
     }
 }
 

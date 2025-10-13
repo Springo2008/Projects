@@ -4,45 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produkter - Husby Drone</title>
+    <link rel="icon" href="photo/picsvg_download.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/produkter-style.css">
 </head>
 
-<body>
+<body class="page-products">
    <div class="container">
-        <header class="header">
+        <header>
             <div class="logo">
                 <a href="index.html">
                     <img src="photo/picsvg_download.svg" alt="Husby Drone Logo - Hjem">
                 </a>
             </div>
             <h1>Produkter</h1>
-            <div class="burger">
-                <div class="burger-line"></div>
-                <div class="burger-line"></div>
-                <div class="burger-line"></div>
-            </div>
+            <button class="burger" type="button" aria-label="Åpne navigasjonsmeny" aria-controls="dropdownMenu" aria-expanded="false">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+            <nav class="dropdown-menu" id="dropdownMenu" aria-label="Hovedmeny">
+                <ul>
+                    <li><a href="index.html">Hjem</a></li>
+                    <li><a href="produkter.html">Produkter</a></li>
+                    <li><a href="specs.html">Drone Visning</a></li>
+                </ul>
+            </nav>
         </header>
-        
-        <nav class="dropdown-menu" id="dropdownMenu">
-            <ul>
-                <li><a href="index.html">Hjem</a></li>
-                <li><a href="produkter.html">Produkter</a></li>
-                <li><a href="specs.html">Drone Visning</a></li>
-            </ul>
-        </nav>
 
-    <main class="main">
-        <div class="content-left">
-            <h2>3-Tommers FPV Drone Build</h2>
-            <p>Her finner du alle komponentene som brukes i vår 3-tommers FPV racing drone. Perfekt for freestyle, racing og akrobatikk. Alle delene er nøye utvalgt for optimal ytelse og pålitelighet.</p>
-        </div>
-        <div class="content-right">
-            <h2>Kvalitet og Ytelse</h2>
-            <p>Denne builden kombinerer de beste komponentene på markedet. Fra kraftige T-Motor P1604 motorer til avansert SpeedyBee flight controller - alt er designet for å gi deg den ultimate FPV-opplevelsen.</p>
-        </div>
-    </main>
+    <main>
+        <section class="intro-grid">
+            <article class="intro-card">
+                <h2>3-Tommers FPV Drone Build</h2>
+                <p>Her finner du alle komponentene som brukes i vår 3-tommers FPV racing drone. Perfekt for freestyle, racing og akrobatikk. Alle delene er nøye utvalgt for optimal ytelse og pålitelighet.</p>
+            </article>
+            <article class="intro-card">
+                <h2>Kvalitet og Ytelse</h2>
+                <p>Denne builden kombinerer de beste komponentene på markedet. Fra kraftige T-Motor P1604 motorer til avansert SpeedyBee flight controller - alt er designet for å gi deg den ultimate FPV-opplevelsen.</p>
+            </article>
+        </section>
 
-    <section class="products-grid">
+        <section class="products-grid">
         <div class="product-card">
             <h3>SpeedyBee F405 Mini Stack</h3>
             <p class="category">Flight Controller & ESC</p>
@@ -152,9 +154,10 @@
                 <a href="https://www.aliexpress.com/item/1005007464241428.html?spm=a2g0o.productlist.main.1.2c6d2377xbfikA&algo_pvid=0207b852-fce5-4d27-9989-287e2e5c4fa2&algo_exp_id=0207b852-fce5-4d27-9989-287e2e5c4fa2-0&pdp_ext_f=%7B%22order%22%3A%2295%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21NOK%21106.67%2135.20%21%21%2174.15%2124.47%21%402103956a17596884251665964e5fb8%2112000040861386109%21sea%21NO%213639523787%21X%211%210%21n_tag%3A-29919%3Bd%3Ac08e1db8%3Bm03_new_user%3A-29895&curPageLogUid=p42q1ubGIVoL&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007464241428%7C_p_origin_prod%3A" target="_blank" class="product-link">Se på AliExpress</a>
             </div>
         </div>
-    </section>
+        </section>
+    </main>
 
-    <footer class="footer">
+    <footer>
         <p>© 2025 Husby Drone. Alle rettigheter forbeholdt.</p>
     </footer>
     </div>
