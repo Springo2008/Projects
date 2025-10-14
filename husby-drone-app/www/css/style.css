@@ -1,0 +1,337 @@
+/* Felles styling for Husby Drone-prosjektet */
+@font-face {
+    font-family: "Eurostile";
+    src: url("../font/Eurostile Extended #2 Bold.otf") format("opentype"),
+         url("../font/Eurostile%20Extended%20%232%20Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+body {
+    margin: 0;
+    font-family: "Eurostile", Arial, sans-serif;
+    background-color: #10367d;
+    color: #333333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body.page-products {
+    background-color: #228b22;
+}
+
+body.page-specs {
+    background-color: #ff6347;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+video {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: #10367d;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #0d2a5d;
+}
+
+body.page-products a {
+    color: #228b22;
+}
+
+body.page-products a:hover,
+body.page-products a:focus {
+    color: #1f7a1f;
+}
+
+body.page-specs a {
+    color: #ff6347;
+}
+
+body.page-specs a:hover,
+body.page-specs a:focus {
+    color: #e5533c;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 2px solid #333333;
+    border-bottom: 2px solid #333333;
+    background: transparent;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: clamp(1rem, 2vw, 1.75rem) clamp(1.25rem, 3vw, 2.5rem);
+    background-color: #ebebeb;
+    border-bottom: 2px solid #333333;
+    position: relative;
+    z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    letter-spacing: 0.04em;
+}
+
+.logo a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo img {
+    height: clamp(2.25rem, 4vw, 3rem);
+    width: auto;
+}
+
+.burger {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.4rem;
+    cursor: pointer;
+}
+
+.burger:focus-visible {
+    outline: 2px solid #10367d;
+    outline-offset: 4px;
+}
+
+.burger-line {
+    width: 1.75rem;
+    height: 0.18rem;
+    background-color: #333333;
+    border-radius: 999px;
+    transition: background-color 0.3s ease;
+}
+
+.burger:hover .burger-line,
+.burger:focus .burger-line {
+    background-color: #10367d;
+}
+
+body.page-products .burger:focus-visible {
+    outline-color: #228b22;
+}
+
+body.page-products .burger:hover .burger-line,
+body.page-products .burger:focus .burger-line {
+    background-color: #228b22;
+}
+
+body.page-specs .burger:focus-visible {
+    outline-color: #ff6347;
+}
+
+body.page-specs .burger:hover .burger-line,
+body.page-specs .burger:focus .burger-line {
+    background-color: #ff6347;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: clamp(1.25rem, 3vw, 2.5rem);
+    background-color: #ebebeb;
+    border: 2px solid #333333;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    min-width: 220px;
+    padding: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li + li {
+    border-top: 1px solid rgba(51, 51, 51, 0.12);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333333;
+    font-weight: 500;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background-color: #10367d;
+    color: #ffffff;
+    border-radius: 0.5rem;
+}
+
+body.page-products .dropdown-menu a:hover,
+body.page-products .dropdown-menu a:focus {
+    background-color: #228b22;
+}
+
+body.page-specs .dropdown-menu a:hover,
+body.page-specs .dropdown-menu a:focus {
+    background-color: #ff6347;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.75rem, 3vw, 3rem);
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.intro-card {
+    background-color: #ebebeb;
+    border: 1px solid rgba(51, 51, 51, 0.12);
+    border-radius: 1rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(2px);
+}
+
+.intro-card h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #333333;
+    font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+}
+
+.intro-card p {
+    margin: 0;
+    color: #666666;
+}
+
+.surface-section {
+    background-color: #ebebeb;
+    border: 2px solid #333333;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.section-heading {
+    margin-top: 0;
+    color: #333333;
+    font-size: clamp(1.5rem, 2.75vw, 2rem);
+}
+
+.footer-note {
+    color: #666666;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #ebebeb;
+    border-top: 2px solid #333333;
+    text-align: center;
+    padding: 1.25rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666666;
+}
+
+@media (max-width: 960px) {
+    header {
+        padding: 1rem clamp(1.25rem, 5vw, 2rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        border-top-width: 0;
+        border-bottom-width: 0;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    header h1 {
+        grid-column: 2;
+        text-align: center;
+    }
+
+    .logo {
+        grid-column: 1;
+        justify-self: start;
+    }
+
+    .burger {
+        grid-column: 3;
+        justify-self: end;
+    }
+
+    .dropdown-menu {
+        right: clamp(1rem, 4vw, 1.75rem);
+        min-width: min(280px, calc(100vw - 2.5rem));
+    }
+
+    main {
+        padding: clamp(1rem, 4vw, 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.85rem clamp(1rem, 6vw, 1.5rem);
+    }
+
+    .burger-line {
+        width: 1.5rem;
+    }
+
+    main {
+        gap: 1.5rem;
+    }
+}
