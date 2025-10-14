@@ -19,9 +19,7 @@ class DroneWebsite {
                 e.stopPropagation();
                 const isOpen = dropdown.classList.toggle('show');
                 burger.setAttribute('aria-expanded', String(isOpen));
-                if (isOpen) {
-                    dropdown.querySelector('a')?.focus();
-                }
+                // Removed auto-focus on first link to avoid pre-selection styling
             });
 
             dropdown.addEventListener('click', (event) => {
