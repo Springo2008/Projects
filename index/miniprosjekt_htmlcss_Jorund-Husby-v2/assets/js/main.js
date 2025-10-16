@@ -1,4 +1,5 @@
 // JavaScript for Husby Drone Website
+//prompt: Vis meg hvordan og lage en Burgermeny som linker til mine .html sider. Skal være i høyre topp og være interaktiv
 class DroneWebsite {
     constructor() {
         this.initBurgerMenu();
@@ -19,7 +20,7 @@ class DroneWebsite {
                 e.stopPropagation();
                 const isOpen = dropdown.classList.toggle('show');
                 burger.setAttribute('aria-expanded', String(isOpen));
-                // Removed auto-focus on first link to avoid pre-selection styling
+                
             });
 
             dropdown.addEventListener('click', (event) => {

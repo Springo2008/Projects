@@ -7,4 +7,6 @@ while x > 0.0000000001:
     x = x / 10
     print(x)
     print(a(x)-np.e)
-print("lim(x->0) (e^(x+1)-e)/x = e =", a(x))
+print("lim(x->0) (e^(x+1)-e)/x = e =", a(x))    
+
+#
