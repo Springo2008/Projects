@@ -7,3 +7,4 @@ x_values = np.linspace(100, 1000, num=10)
 f_values = f(x_values)
 limit_inf = f_values[-1]
 print(f"Lim x-> inf f(x) = {limit_inf}")
+
