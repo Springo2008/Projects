@@ -434,8 +434,8 @@
     </div>
     <div class="box result" style="margin-top: 20px;">
         <h3>✓ Kraft Estimering:</h3>
-        <p>Peak kraft: <span class="highlight">3.0 N</span> | Gjennomsnitt: ~1.5 N</p>
-        <p style="margin-top: 10px; font-size: 0.95em;">→ Thrust to Weight ratio: 1.27:1 (peak) / 0.64:1 (gjennomsnitt)</p>
+        <p>Peak kraft: <span class="highlight">8.24 N</span> | Gjennomsnitt: ~5.18 N</p>
+        <p style="margin-top: 10px; font-size: 0.95em;">→ Thrust to Weight ratio: <span class="highlight">3.50:1 (peak)</span> / <span class="highlight">2.20:1 (gjennomsnitt)</span> - Racing kategori!</p>
     </div>
 </div>
 
@@ -453,7 +453,79 @@
     <img src="../out/drone_flights_statistics.png" alt="Drone Flights Statistics">
 </div>
 
-<!-- SLIDE 13: Verifisering av Newton -->
+<!-- SLIDE 13: 3-Inch Drone Sammenligning -->
+<div class="slide">
+    <h2>🔍 Sammenligning: 3-Inch Drone Data</h2>
+    <p style="text-align: center; font-size: 1.1em; margin-bottom: 20px;">Analyse av ekstern 3-inch drone dataset:</p>
+    <img src="../out/3inch_drone_analysis.png" alt="3-Inch Drone Analysis">
+</div>
+
+<!-- SLIDE 14: Detaljert Sammenligning -->
+<div class="slide">
+    <h2>📊 Detaljert Sammenligning: OSD vs 3-Inch Drone</h2>
+    <table>
+        <tr>
+            <th>Parameter</th>
+            <th>Din OSD Data</th>
+            <th>3-Inch Drone</th>
+            <th>Forskel</th>
+        </tr>
+        <tr>
+            <td><strong>Peak G-kraft</strong></td>
+            <td>2.50 g</td>
+            <td>2.40 g</td>
+            <td style="color: #28a745;"><strong>-4.0%</strong> ✓</td>
+        </tr>
+        <tr>
+            <td><strong>Gjennomsnitt G-kraft</strong></td>
+            <td>1.20 g</td>
+            <td>1.67 g</td>
+            <td style="color: #ffc107;"><strong>+39.4%</strong></td>
+        </tr>
+        <tr>
+            <td><strong>Min G-kraft</strong></td>
+            <td>~0.00 g</td>
+            <td>1.00 g</td>
+            <td style="color: #dc3545;">N/A</td>
+        </tr>
+        <tr>
+            <td><strong>Peak Amperage</strong></td>
+            <td>~15.0 A</td>
+            <td>14.79 A</td>
+            <td style="color: #28a745;"><strong>-1.4%</strong> ✓</td>
+        </tr>
+        <tr>
+            <td><strong>Gjennomsnitt Amperage</strong></td>
+            <td>~12.0 A</td>
+            <td>13.02 A</td>
+            <td style="color: #ffc107;"><strong>+8.5%</strong></td>
+        </tr>
+        <tr>
+            <td><strong>Peak Wattage</strong></td>
+            <td>~222 W</td>
+            <td>231 W</td>
+            <td style="color: #28a745;"><strong>+4.1%</strong> ✓</td>
+        </tr>
+        <tr>
+            <td><strong>Gjennomsnitt Wattage</strong></td>
+            <td>~150 W</td>
+            <td>203.28 W</td>
+            <td style="color: #ffc107;"><strong>+35.5%</strong></td>
+        </tr>
+        <tr>
+            <td><strong>Std. Avvik G-kraft</strong></td>
+            <td>Ikke beregnet</td>
+            <td>0.470 g</td>
+            <td>-</td>
+        </tr>
+    </table>
+    <div class="box result" style="margin-top: 20px;">
+        <h3>✓ Konklusjon:</h3>
+        <p>Peak-verdiene er nesten identiske! 3-inch dronen opprettholder høyere gjennomsnittskraft (mer effektiv motor/batteri), mens din drone har raskere overganger (raske akselerasjoner).</p>
+    </div>
+</div>
+
+<!-- SLIDE 15: Verifisering av Newton -->
 <div class="slide">
     <h2>✓ Verifisering av Newtons 2. Lov</h2>
     <div class="box result">
@@ -469,9 +541,9 @@
         </div>
         <div class="box result">
             <h3>Resultat:</h3>
-            <p>Peak Thrust: 3.0 N</p>
+            <p>Peak Thrust: 8.24 N</p>
             <p>Vekt: 2.35 N</p>
-            <p>T/W ratio: <span class="highlight">1.27:1</span></p>
+            <p>T/W ratio: <span class="highlight">3.50:1</span> ← Racing!</p>
         </div>
     </div>
     <div class="box result" style="margin-top: 20px;">
@@ -479,7 +551,7 @@
     </div>
 </div>
 
-<!-- SLIDE 14: Batterispenning -->
+<!-- SLIDE 16: Batterispenning -->
 <div class="slide">
     <h2>🔋 Batterispenning Analyse</h2>
     <div class="box warning">
@@ -498,7 +570,7 @@
     </div>
 </div>
 
-<!-- SLIDE 15: Energieffektivitet -->
+<!-- SLIDE 17: Energieffektivitet -->
 <div class="slide">
     <h2>⚡ Energieffektivitet</h2>
     <div class="grid-2">
@@ -519,12 +591,12 @@
     </div>
 </div>
 
-<!-- SLIDE 16: Konklusjoner -->
+<!-- SLIDE 18: Konklusjoner -->
 <div class="slide">
     <h2>✓ Konklusjoner</h2>
     <div class="box result">
         <h3>H1 - BEKREFTET ✓</h3>
-        <p>Akselerasjonen følger Newtons 2. lov (Peak G = 2.5g = 24.5 m/s², T/W = 1.27)</p>
+        <p>Akselerasjonen følger Newtons 2. lov (Peak G = 2.5g = 24.5 m/s², T/W = 3.50:1)</p>
     </div>
     <div class="box result" style="margin-top: 15px;">
         <h3>H2 - BEKREFTET ✓</h3>
@@ -540,7 +612,7 @@
     </div>
 </div>
 
-<!-- SLIDE 17: Usikkerheter & Feilkilder -->
+<!-- SLIDE 19: Usikkerheter & Feilkilder -->
 <div class="slide">
     <h2>⚠️ Usikkerheter & Fordeler OSD</h2>
     <div class="box warning">
@@ -563,7 +635,7 @@
     </div>
 </div>
 
-<!-- SLIDE 18: Forbedringer -->
+<!-- SLIDE 20: Forbedringer -->
 <div class="slide">
     <h2>🔧 Mulige Forbedringer</h2>
     <div class="grid-2">
@@ -586,10 +658,10 @@
     </div>
 </div>
 
-<!-- SLIDE 19: Konklusjon -->
+<!-- SLIDE 21: Konklusjon -->
 <div class="slide title-slide">
     <h1>🎯 Konklusjon</h1>
-    <p style="font-size: 1.4em; margin-top: 40px;">Eksperimentet bekrefter at akselerasjon på en FPV-drone følger Newtons fysikalske lover og kan måles pålitelig med micro:bit</p>
+    <p style="font-size: 1.4em; margin-top: 40px;">Eksperimentet bekrefter at akselerasjon på en FPV-drone følger Newtons fysikalske lover. Din drone har T/W = 3.50:1 - Racing kategori!</p>
     <div class="box result" style="margin-top: 60px; background: rgba(40, 167, 69, 0.2); border: none; color: white;">
         <p style="font-size: 1.3em;">✓ Hypoteser bekreftet</p>
         <p style="font-size: 1.3em;">✓ Resultater konsistente</p>
@@ -597,7 +669,7 @@
     </div>
 </div>
 
-<!-- SLIDE 20: Kilder -->
+<!-- SLIDE 22: Kilder -->
 <div class="slide">
     <h2>📚 Kilder & Referanser</h2>
     <div class="box">
@@ -622,7 +694,7 @@
     </div>
 </div>
 
-<!-- SLIDE 21: Takk -->
+<!-- SLIDE 23: Takk -->
 <div class="slide title-slide">
     <h1>Takk for Oppmerksomheten! 🙏</h1>
     <p style="margin-top: 60px; font-size: 1.5em;">Spørsmål?</p>
@@ -630,7 +702,7 @@
 </div>
 
 <!-- Controls -->
-<div class="slide-number"><span id="current">1</span> / <span id="total">21</span></div>
+<div class="slide-number"><span id="current">1</span> / <span id="total">23</span></div>
 <div class="controls">
     <button onclick="previousSlide()">← Forrige</button>
     <button onclick="nextSlide()">Neste →</button>
