@@ -33,8 +33,20 @@ console.log("Det største tallet er: " + storste);
 let minste =Math.min(...randomTall);
 console.log("Det minste tallet er: " + minste);
 
+
 // finn variasjonsbredden av tallene
 let variasjonsbredden = storste - minste;
 console.log("Variasjonsbredden er: " + variasjonsbredden);
     
 // finn gjennomsnittet av tallene
+let gjennomsnitt = randomTall.reduce((a, b) => a + b) / randomTall.length;
+console.log("Gjennomsnittet er: " + gjennomsnitt);
+
+function findGjennomsnitt(arr) {
+    sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+confirm("Gjennomsnittet er: " + findGjennomsnitt(randomTall));
