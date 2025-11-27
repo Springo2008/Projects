@@ -42,11 +42,3 @@ console.log("Variasjonsbredden er: " + variasjonsbredden);
 let gjennomsnitt = randomTall.reduce((a, b) => a + b) / randomTall.length;
 console.log("Gjennomsnittet er: " + gjennomsnitt);
 
-function findGjennomsnitt(arr) {
-    sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
-    return sum / arr.length;
-}
-confirm("Gjennomsnittet er: " + findGjennomsnitt(randomTall));
