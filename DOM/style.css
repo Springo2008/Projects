@@ -123,7 +123,16 @@ div {
 .switch input:checked + .slider:before {
     transform: translateX(16px);
 }
+audio{
+     margin-bottom: 10px;
+    background-color: #808076;
+    border-radius: 0.5em;
+    padding: 10px;
+    border: 1px solid #111A19;
+    font-size: 28px;
+    font-weight: 600;
 
+}
 
 
 

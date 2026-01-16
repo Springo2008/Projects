@@ -1,3 +1,4 @@
+
 function saveText() {
     var textEl = document.getElementById('textArea').value;
     var titleEl = document.getElementById('textTitle').value;
@@ -21,22 +22,39 @@ textarea.addEventListener("input", function() {
 function disableTxt() {
   var checkbox = document.getElementById("check");
   var text = document.getElementById("textArea");
+  var textTitle = document.getElementById("textTitle");
+  var element = document.getElementById("p1");
 
   if (checkbox.checked){
+    new Audio('sfx/light-switch-382712.mp3').play()
     text.disabled = true;
-  } else{
+    element = document.getElementById('p1').style.backgroundColor = "red";
+    textTitle.disabled = true;
+    
+  } 
+  else if (document.getElementById("check").checked = false){
+    element = document.getElementById('p1').style.backgroundColor = "rgb(40, 65, 57)";
+    textTitle.disabled = false;
+    new Audio('sfx/light-switch-382712.mp3').play()
+
+  }
+  else{
     text.disabled = false;
+    textTitle.disabled = false;
+    element = document.getElementById('p1').style.backgroundColor = "rgb(40, 65, 57)";
+     new Audio('sfx/light-switch-382712.mp3').play()
+  
+  
    }
-}
+  
   
 
 
 /*function undisableTxt() {
   
-  
-}
-}
+<audio src="sfx/jazz-lounge-elevator-music-332339.mp3" loop controls></audio>
 
-);
+
+
 */
-
+  }

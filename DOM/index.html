@@ -7,21 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <h1>Notepad</h1>
-    <p>This is a notepad, you can write in the fields and lock it if nessecary. Press "Save as (.Txt) to export what you have written.</p>
-   
+<body id="p1">
+    <h1>Husby Notepad</h1>
+    <audio id="audio1" src="sfx/jazz-lounge-elevator-music-322314.mp3" autoplay loop controls></audio>
+
     <textarea id="textTitle" placeholder=Filnavn class="notepad-title"></textarea>
     <div id="char-length">0 Letters, 0 Words</div> 
     <label class="switch">
         <input type="checkbox" id="check" onclick="disableTxt()">
-        <span class ="slider round"></span>Lock
-
+        <span class="slider round"></span>Lock
     </label>
 
     <textarea id="textArea" placeholder=Text class="notepad"></textarea>
-    <button class ="button" onclick="saveText()">Save As (.txt)</button>
-    
+    <button class="button" onclick="saveText()">Save As (.txt)</button>
     
     <script src="java.js"></script>
 </body>
